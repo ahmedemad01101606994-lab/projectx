@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./userSlice";
 import cartReducer from "./cartslice";
-import formslice from "./form";
+import formReducer from "./formSlice";
 import users from "./usersSlice";
 // sotre states global
 export const store = configureStore({
@@ -9,7 +9,7 @@ export const store = configureStore({
     // user =>useselector(state=>state.user)
     user: userReducer,
     cart: cartReducer,
-    form: formslice,
+    form: formReducer,
     users: users,
   },
 });

@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
-import { addform } from "../store/form";
+import { addform } from "../store/formSilce";
 import { v4 as uuidv4 } from "uuid";
 
 function AddProduct() {
