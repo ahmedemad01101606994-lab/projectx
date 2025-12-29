@@ -3,7 +3,7 @@ import axios from "axios";
 import { Table, Button, Modal, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteProduct, editProduct } from "../store/form";
+// import { deleteProduct, editProduct } from "../store/form";
 
 function DashboardProducts() {
   const dispatch = useDispatch();
