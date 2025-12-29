@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Button, Form, FormControl, FormGroup } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { setUser } from "../../store/userSlice";
+import { setuser } from "../../store/userSlice";
 import { useNavigate } from "react-router-dom";
 import InputGroup from "react-bootstrap/InputGroup";
 import { FaRegEyeSlash } from "react-icons/fa";
@@ -45,7 +45,7 @@ function Login({ theme }) {
       toast.success("Login success");
 
       //  Store user
-      dispatch(setUser(loginRes.data));
+      dispatch(setuser(loginRes.data));
       localStorage.setItem("user", JSON.stringify(loginRes.data));
 
       //  Get auth user

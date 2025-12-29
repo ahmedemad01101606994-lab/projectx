@@ -12,7 +12,8 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import axios from "axios";
 import Products from "./Pages/Products/Products";
-import { setUser, clearUser } from "./store/userSlice";
+import { setuser, clearuser } from "./store/userSlice";
+
 import ProductsbyId from "./Pages/ProductsbyId/ProductsbyId";
 import Cart from "./Pages/Home/Cart/Cart";
 import "./App.css";
@@ -39,11 +40,11 @@ function App() {
           const res = await axios.get("https://dummyjson.com/auth/me", {
             headers: { Authorization: `Bearer ${token}` },
           });
-          dispatch(setUser(res.data));
+          dispatch(setuser(res.data));
         }
       } catch (error) {
         toast.error(error?.response?.data?.message);
-        dispatch(clearUser());
+        dispatch(clearuser());
         localStorage.removeItem("user");
       } finally {
         setLoading(false);
