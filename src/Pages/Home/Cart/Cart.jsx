@@ -39,7 +39,7 @@ function Cart() {
                         <img src={item.thumbnail} alt="" width={100} />
                       </div>
                       <h6>{item.title}</h6>
-                      <p>${item.price}</p>
+                      <h5>${item.price}</h5>
                     </Col>
                     <Col md={4} className="d-flex justify-content-center">
                       <Button

@@ -92,13 +92,11 @@ function Home() {
         <h1 className="text-center">Categories</h1>
         <Form>
           <Form.Select
-            onChange={(ev) => {
-              // console.log(ev.target.value);
-              setSelected(ev.target.value);
-            }}
+            value={selected} // تحكم في الاختيار من خلال value
+            onChange={(ev) => setSelected(ev.target.value)}
           >
             {category.map((item) => (
-              <option key={item} value={item} selected={item === selected}>
+              <option key={item} value={item}>
                 {item.toUpperCase()}
               </option>
             ))}
