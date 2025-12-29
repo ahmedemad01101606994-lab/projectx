@@ -1,12 +1,12 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { clearuser } from "../../store/userSlice";
+import { clearUser } from "../../store/userSlice";
 import toast from "react-hot-toast";
 function Logout() {
   const dispatch = useDispatch();
   function handlelogout() {
-    dispatch(clearuser());
+    dispatch(clearUser());
     localStorage.removeItem("user");
     toast.success("logout success");
   }
