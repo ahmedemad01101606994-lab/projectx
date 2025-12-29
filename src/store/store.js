@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./userSlice";
 import cartReducer from "./cartslice";
-import formReducer from "./formSlice";
+import formReducer from "./form";
 import users from "./usersSlice";
 // sotre states global
 export const store = configureStore({
