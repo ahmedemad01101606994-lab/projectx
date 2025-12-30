@@ -16,7 +16,7 @@ import { setuser, clearuser } from "./store/user";
 import ProductsbyId from "./Pages/ProductsbyId/ProductsbyId";
 import Cart from "./Pages/Home/Cart/Cart";
 import "./App.css";
-import Sreach from "./Pages/ProductsSreach/Sreach";
+import Sreach from "./Pages/Sreach/Sreach";
 import Dashbord from "./Pages/Dashbord/Dashbord";
 import Users from "./Users/Users";
 import DashboardProducts from "./DashboardProducts/DashboardProducts";
