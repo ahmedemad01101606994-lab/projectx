@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const getInitialUsers = () => {
+const getUsersFromStorage = () => {
   try {
     return JSON.parse(localStorage.getItem("users")) || [];
   } catch {
@@ -8,10 +8,10 @@ const getInitialUsers = () => {
   }
 };
 
-const usersSlice = createSlice({
+const dashuserSlice = createSlice({
   name: "users",
   initialState: {
-    users: getInitialUsers(),
+    users: getUsersFromStorage(),
   },
   reducers: {
     addUser: (state, action) => {
@@ -32,5 +32,5 @@ const usersSlice = createSlice({
   },
 });
 
-export const { addUser, deleteUser, editUser } = usersSlice.actions;
-export default usersSlice.reducer;
+export const { addUser, deleteUser, editUser } = dashuserSlice.actions;
+export default dashuserSlice.reducer;

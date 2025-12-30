@@ -3,11 +3,11 @@ import axios from "axios";
 import { Table, Button, Modal, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { addUser, deleteUser } from "../store/usersSlice";
+import { addUser, deleteUser } from "../store/dashuserSlice";
 
 function UsersDashboard() {
   const dispatch = useDispatch();
-  const reduxUsers = useSelector((state) => state.users.users);
+  const reduxUsers = useSelector((state) => state.dashuser.users);
   console.log(reduxUsers);
   const [apiUsers, setApiUsers] = useState([]);
   const [loading, setLoading] = useState(true);

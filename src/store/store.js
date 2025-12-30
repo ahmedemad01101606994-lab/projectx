@@ -2,8 +2,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./userSlice";
 import cartReducer from "./cartslice";
 import formReducer from "./form";
-import users from "./usersSlice";
-import carts from "./cartsSlice";
+import dashuserSlice from "./dashuserSlice";
+import dashcartSlice from "./dashcartSlice";
 // sotre states global
 export const store = configureStore({
   reducer: {
@@ -11,7 +11,7 @@ export const store = configureStore({
     user: userReducer,
     cart: cartReducer,
     form: formReducer,
-    users: users,
-    carts: carts,
+    dashuser: dashuserSlice,
+    dashcart: dashcartSlice,
   },
 });

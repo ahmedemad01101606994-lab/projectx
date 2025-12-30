@@ -3,11 +3,12 @@ import axios from "axios";
 import { Table, Button, Modal, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteCart, updateCart } from "../store/cartsSlice";
+import { deleteCart, updateCart } from "../store/dashcartSlice";
 
 function Carts() {
   const dispatch = useDispatch();
-  const reduxCarts = useSelector((state) => state.carts.carts);
+  const reduxCarts = useSelector((state) => state.dashcart.carts);
+  console.log(reduxCarts);
   const [apiCarts, setApiCarts] = useState([]);
   const [loading, setLoading] = useState(true);
 

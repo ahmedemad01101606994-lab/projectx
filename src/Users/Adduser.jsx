@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { addUser } from "../store/usersSlice";
+import { addUser } from "../store/dashuserSlice";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 

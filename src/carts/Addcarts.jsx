@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { addCart } from "../store/cartsSlice";
+import { addCart } from "../store/dashcartSlice";
 import { useNavigate } from "react-router-dom";
 
 export default function Addcarts() {
