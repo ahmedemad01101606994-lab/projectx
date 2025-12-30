@@ -7,8 +7,8 @@ import { deleteCart, updateCart } from "../store/cartsSlice";
 
 function Carts() {
   const dispatch = useDispatch();
-  const reduxCarts = useSelector((state) => state.carts.carts); // بيانات Redux
-  const [apiCarts, setApiCarts] = useState([]); // بيانات API
+  const reduxCarts = useSelector((state) => state.carts.carts);
+  const [apiCarts, setApiCarts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const [showEditModal, setShowEditModal] = useState(false);
@@ -19,7 +19,6 @@ function Carts() {
   const [total, setTotal] = useState(0);
   const [discount, setDiscount] = useState(0);
 
-  // Fetch carts from API
   useEffect(() => {
     const fetchCarts = async () => {
       try {
@@ -34,10 +33,8 @@ function Carts() {
     fetchCarts();
   }, []);
 
-  // دمج بيانات Redux و API للعرض
   const allCarts = [...apiCarts, ...reduxCarts];
 
-  // فتح مودال التعديل
   const openEditModal = (cart) => {
     setSelectedCart(cart);
     setUserId(cart.userId);
@@ -57,11 +54,9 @@ function Carts() {
       discountedTotal: Number(discount),
     };
 
-    // تعديل البيانات في Redux إذا الكارت موجود فيها
     if (reduxCarts.some((c) => c.id === selectedCart.id)) {
       dispatch(updateCart(updatedCart));
     } else {
-      // تعديل مؤقت في API carts المحلي
       setApiCarts((prev) =>
         prev.map((c) => (c.id === selectedCart.id ? updatedCart : c))
       );
@@ -70,7 +65,6 @@ function Carts() {
     setShowEditModal(false);
   };
 
-  // حذف كارت
   const handleDelete = (cart) => {
     if (reduxCarts.some((c) => c.id === cart.id)) {
       dispatch(deleteCart(cart.id));
