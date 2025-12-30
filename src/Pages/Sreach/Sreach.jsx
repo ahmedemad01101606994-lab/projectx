@@ -6,6 +6,7 @@ import { Form } from "react-bootstrap";
 import Loading from "../Loading/Loading";
 import { Pagination } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import Footer from "../Footer/Footer";
 export default function Sreach() {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
@@ -51,6 +52,7 @@ export default function Sreach() {
           </h1>
         )}
       </Row>
+      <Footer></Footer>
     </div>
   );
 }
