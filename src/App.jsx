@@ -12,8 +12,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import axios from "axios";
 import Products from "./Pages/Products/Products";
-import { setuser, clearuser } from "./store/userSlice";
-
+import { setuser, clearuser } from "./store/user";
 import ProductsbyId from "./Pages/ProductsbyId/ProductsbyId";
 import Cart from "./Pages/Home/Cart/Cart";
 import "./App.css";

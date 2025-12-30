@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Button, Form, FormControl, FormGroup } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { setuser } from "../../store/userSlice";
+import { setuser } from "../../store/user";
 import { useNavigate } from "react-router-dom";
 import InputGroup from "react-bootstrap/InputGroup";
 import { FaRegEyeSlash } from "react-icons/fa";

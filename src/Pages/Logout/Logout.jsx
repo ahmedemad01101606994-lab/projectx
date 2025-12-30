@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { clearuser } from "../../store/userSlice";
+import { clearuser } from "../../store/user";
 
 import toast from "react-hot-toast";
 function Logout() {
