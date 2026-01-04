@@ -45,7 +45,6 @@ function Carts() {
     setShowEditModal(true);
   };
 
-  // حفظ التعديلات
   const handleEdit = () => {
     const updatedCart = {
       ...selectedCart,
