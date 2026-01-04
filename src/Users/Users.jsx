@@ -21,7 +21,6 @@ function UsersDashboard() {
   const [editGender, setEditGender] = useState("");
   const [editDepartment, setEditDepartment] = useState("");
 
-  // جلب المستخدمين من Dummy API
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -36,10 +35,9 @@ function UsersDashboard() {
     fetchUsers();
   }, []);
 
-  // دمج كل المستخدمين للعرض
+   
   const allUsers = [...apiUsers, ...reduxUsers];
 
-  // فتح modal تعديل المستخدم
   const openEditModal = (user) => {
     setSelectedUser(user);
     setEditUsername(user.username || user.user);
@@ -49,7 +47,6 @@ function UsersDashboard() {
     setShowEditModal(true);
   };
 
-  // تعديل المستخدم
   const handleEdit = () => {
     const updatedUser = {
       ...selectedUser,
@@ -63,11 +60,10 @@ function UsersDashboard() {
       user: selectedUser.user ? editUsername : undefined,
     };
 
-    // تعديل فقط إذا المستخدم موجود في Redux
+    
     if (reduxUsers.some((u) => u.id === selectedUser.id)) {
       dispatch(addUser(updatedUser)); // تحديث Redux
     } else {
-      // تعديل مؤقت للـ API users فقط في state المحلي
       setApiUsers((prev) =>
         prev.map((u) => (u.id === selectedUser.id ? updatedUser : u))
       );
@@ -76,7 +72,7 @@ function UsersDashboard() {
     setShowEditModal(false);
   };
 
-  // حذف المستخدم
+  
   const handleDelete = (user) => {
     if (reduxUsers.some((u) => u.id === user.id)) {
       dispatch(deleteUser(user.id));
