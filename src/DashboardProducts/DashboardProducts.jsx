@@ -22,7 +22,7 @@ function DashboardProducts() {
   const [editCategory, setEditCategory] = useState("");
   const [editThumbnail, setEditThumbnail] = useState("");
 
-  // جلب منتجات API
+  
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -37,10 +37,8 @@ function DashboardProducts() {
     fetchProducts();
   }, []);
 
-  // دمج كل المنتجات للعرض
   const allProducts = [...apiProducts, ...newProducts];
 
-  // فتح modal تعديل المنتج
   const openEditModal = (product) => {
     setSelectedProduct(product);
     setEditTitle(product.title);
@@ -51,7 +49,6 @@ function DashboardProducts() {
     setShowEditModal(true);
   };
 
-  // تعديل المنتج
   const handleEdit = () => {
     const updatedProduct = {
       ...selectedProduct,
@@ -73,13 +70,10 @@ function DashboardProducts() {
     setShowEditModal(false);
   };
 
-  // حذف المنتج
   const handleDelete = (product) => {
     if (newProducts.some((np) => np.id === product.id)) {
-      // حذف المنتج الجديد من Redux + localStorage
       dispatch(deleteProduct(product.id));
     } else {
-      // حذف مؤقت للمنتج من API
       setApiProducts((prev) => prev.filter((p) => p.id !== product.id));
     }
     setShowDeleteModal(false);
